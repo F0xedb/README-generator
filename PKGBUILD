@@ -7,7 +7,7 @@ url="https://github.com/F0xedb/README-generator"
 license=('GPL')
 
 source=("readme-gen" "demo")
-md5sums=(0f3ef73d06a3fa339440fa25b131cf3d 20de561f5db44d25b778036c2047d371)
+md5sums=(a1d1a0931eef75bf3a99038b453d157f 20de561f5db44d25b778036c2047d371)
 
 prepare() {
     chmod +x readme-gen # Make sure our package is executable

@@ -10,7 +10,7 @@ read -p "What is your image url? " image_url
 read -p "What is your image width in px? " width
 read -p "What is your image height in px? " height
 
-directory="/var/cache/readme/demo"
+directory="/var/cache/readme/"
 
 
 if [[ -f README.md ]]; then
