@@ -1,0 +1,147 @@
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![license_var License][license-shield]][license-url]
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/org_name/repo">
+    <img src="image_url" alt="Logo" width="width_img" height="height_img">
+  </a>
+
+  <h3 align="center">title</h3>
+
+  <p align="center">
+    desc_var
+    <br />
+    <a href="https://github.com/org_name/repo"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/org_name/repo">View Demo</a>
+    ·
+    <a href="https://github.com/org_name/repo/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/org_name/repo/issues">Request Feature</a>
+  </p>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+```sh
+pacman -Syu repo
+```
+
+### Installation
+ 
+1. Clone the repo
+```sh
+git clone https:://github.com/org_name/repo.git
+```
+2. Install packages
+```sh
+pacman -Syu repo
+```
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](doc_var)_
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/org_name/repo/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the license_var License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - email
+
+Project Link: [https://github.com/org_name/repo](https://github.com/org_name/repo)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [org_name](https://github.com/org_name/repo)
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/org_name/repo.svg?style=flat-square
+[contributors-url]: https://github.com/org_name/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/org_name/repo.svg?style=flat-square
+[forks-url]: https://github.com/org_name/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/org_name/repo.svg?style=flat-square
+[stars-url]: https://github.com/org_name/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/org_name/repo.svg?style=flat-square
+[issues-url]: https://github.com/org_name/repo/issues
+[license-shield]: https://img.shields.io/github/license/org_name/repo.svg?style=flat-square
+[license-url]: https://github.com/org_name/repo/blob/master/LICENSE.txt
+[product-screenshot]: image_url
