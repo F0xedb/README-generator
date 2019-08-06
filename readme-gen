@@ -1,5 +1,20 @@
 #!/bin/bash
 
+name=$(basename "$0")
+
+function help {
+    printf "%s OPTIONS:\n" "$name"
+    printf "\t %s -h|--help \t\t Print help information\n" "$name"
+    printf "\t %s \t\t\t Answer questions interactivaly to generate readme\n" "$name"
+}
+
+
+
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+        help
+        exit 0
+fi
+
 read -p "What is your project name? " repo
 read -p "What is your github name/organization? " org_name
 read -p "What is the title? " title
@@ -16,6 +31,7 @@ directory="/var/cache/readme/"
 if [[ -f README.md ]]; then
  mv README.md README_old.md
 fi
+
 
 sed "s;repo;$repo;g" "$directory"demo > README.md
 sed -i "s;org_name;$org_name;g" README.md
