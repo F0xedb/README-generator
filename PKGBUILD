@@ -1,31 +1,30 @@
-pkgname=readme-generator
+# Maintainer: Tom Meyers tom@pbfp.team
+pkgname=readme-generator-git
 pkgver=1
 pkgrel=1
 pkgdesc="A basic tool to generate modern readme's"
 arch=(any)
 url="https://github.com/F0xedb/README-generator"
+reponame="README-generator"
 license=('GPL')
 
-source=("readme-gen" "demo")
-md5sums=(a1d1a0931eef75bf3a99038b453d157f 20de561f5db44d25b778036c2047d371)
+source=(
+"git+https://github.com/F0xedb/README-generator.git")
+md5sums=('SKIP')
+
 
 prepare() {
-    chmod +x readme-gen # Make sure our package is executable
-    echo "Preparing the source files"
+    chmod +x "$reponame/"readme-gen # Make sure our package is executable
 }
 
 build() {
-    echo "Compiling source"
+    return 0;
 }
 
-check() {
-    echo "Verifying if files are correct, eg unit testing, make check"
-}
 
 package() {
-    echo "Packaging the compiled files"
-    mkdir -p $pkgdir/usr/bin
-    mkdir -p $pkgdir/var/cache/readme
-    cp readme-gen $pkgdir/usr/bin
-    cp demo $pkgdir/var/cache/readme/demo
+    mkdir -p "$pkgdir"/usr/bin
+    mkdir -p "$pkgdir"/var/cache/readme
+    cp "$reponame"/readme-gen "$pkgdir"/usr/bin
+    cp "$reponame"/demo "$pkgdir"/var/cache/readme/demo
 }
