@@ -11,6 +11,7 @@ license=('GPL')
 source=(
 "git+https://github.com/F0xedb/README-generator.git")
 md5sums=('SKIP')
+makedepends=('git')
 
 pkgver() {
   cd "$srcdir/$_reponame"
