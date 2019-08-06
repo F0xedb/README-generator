@@ -1,6 +1,6 @@
 # Maintainer: Tom Meyers tom@pbfp.team
 pkgname=readme-generator-git
-pkgver=r10.
+pkgver=r11.da1b4a5
 pkgrel=1
 pkgdesc="A basic tool to generate modern readme's"
 arch=(any)
