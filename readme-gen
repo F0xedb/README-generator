@@ -17,6 +17,8 @@ fi
 
 read -p "What is your project name? " repo
 read -p "What is your github name/organization? " org_name
+read -p "What is your name/id? " usr_name
+read -p "What is your email? " usr_email
 read -p "What is the title? " title
 read -p "Give us a short description? " desc
 read -p "What is your documentation url? " doc
@@ -35,6 +37,8 @@ fi
 
 sed "s;repo;$repo;g" "$directory"demo > README.md
 sed -i "s;org_name;$org_name;g" README.md
+sed -i "s;usr_name;$usr_name;g" README.md
+sed -i "s;usr_email;$usr_email;g" README.md
 sed -i "s;title;$title;g" README.md
 sed -i "s;desc_var;$desc;g" README.md
 sed -i "s;doc_var;$doc;g" README.md
