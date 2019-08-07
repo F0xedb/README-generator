@@ -95,6 +95,82 @@ readme-gen
 And answer all questions.
 It will generate the readme file in the current dir.
 
+### config
+
+Alternativly you can use a config file and based on that generate a readme.
+
+```bash
+readme-gen -c config
+```
+
+The config file will look something like this
+
+```bash
+#example config file for the readme generator
+
+# Set the theme to generate from
+# If it is not specified the theme will be "demo"
+theme="demo"
+
+# General settings. These must be present in this config otherwise they will be empty in the final result
+repo="README-generator" # this will autofill to https://www.github.com/F0xedb/README-generator inside the readme template
+org_name="F0xedb"
+usr_name="$org_name" # You can reference other variables like this
+usr_email="tom@pbfp.team"
+
+title="README generator"
+desc="A simple readme generator"
+
+doc="https://www.pbfp.xyz"
+
+license="GPL"
+
+image_url="https://tos.pbfp.xyz/images/logo.svg"
+width="150" # width of the image in pixels
+height="200" # height of the image in pixels
+```
+
+This is the example used for generating this readme.
+
+### templates
+
+To add a readme template to this tool use the following
+
+```bash
+readme-gen --add template
+```
+
+The template works as followed. 
+All variables are used in this simple example
+
+```markdown
+
+<a href="https://github.com/org_name/repo">
+   <img src="image_url" alt="Logo" width="width_img" height="height_img">
+</a>
+
+# title
+desc_var
+
+## extra
+
+build by
+usr_name - usr_email
+
+repo is build using license_var
+
+_more info refer to the [Documentation](doc_var)
+
+```
+
+You can also list all the current existing theme and also tell the tool which theme to use
+
+```bash
+readme-gen --list # this lists all the known templates
+readme-gen --theme <template> # the readme will be generated using the <template> theme
+```
+
+
 _For more examples, please refer to the [Documentation](https://www.pbfp.xyz)_
 
 
