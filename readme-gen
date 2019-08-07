@@ -8,6 +8,13 @@ function help {
     printf "%s OPTIONS:\n" "$name"
     printf "\t %s -h|--help \t\t Print help information\n" "$name"
     printf "\t %s \t\t\t Answer questions interactivaly to generate readme\n" "$name"
+    printf "\t %s -l|--list\t\t Return a list of all possible readme templates\n" "$name"
+    printf "\t %s -t|--theme\t\t Use the theme present in said list\n" "$name"
+    printf "\t %s -a|--add\t\t Add a homemade readme template \n" "$name"
+    printf "\t %s -c|--config\t\t Instead of generating a readme interactivaly use a config to generate the readme from. \n" "$name"
+    printf "\n\n"
+    printf "EXTRA INFO\n"
+    printf "\t Sample config can be found here: https://www.github.com/F0xedb/README-generator\n"
 }
 
 function generate () {
