@@ -1,6 +1,8 @@
 #!/bin/bash
 
 name=$(basename "$0")
+directory="/var/cache/readme/"
+theme="demo"
 
 function help {
     printf "%s OPTIONS:\n" "$name"
@@ -8,41 +10,84 @@ function help {
     printf "\t %s \t\t\t Answer questions interactivaly to generate readme\n" "$name"
 }
 
+function generate () {
+    read -p "What is your project name? " repo
+    read -p "What is your github name/organization? " org_name
+    read -p "What is your name/id? " usr_name
+    read -p "What is your email? " usr_email
+    read -p "What is the title? " title
+    read -p "Give us a short description? " desc
+    read -p "What is your documentation url? " doc
+    read -p "What is your license? " license
+    read -p "What is your image url? " image_url
+    read -p "What is your image width in px? " width
+    read -p "What is your image height in px? " height
+}
 
+function execute {
+    sed "s;repo;$repo;g" "$directory""$theme" > README.md
+    sed -i "s;org_name;$org_name;g" README.md
+    sed -i "s;usr_name;$usr_name;g" README.md
+    sed -i "s;usr_email;$usr_email;g" README.md
+    sed -i "s;title;$title;g" README.md
+    sed -i "s;desc_var;$desc;g" README.md
+    sed -i "s;doc_var;$doc;g" README.md
+    sed -i "s;license_var;$license;g" README.md
+    sed -i "s;image_url;$image_url;g" README.md
+    sed -i "s;width_img;$width;g" README.md
+    sed -i "s;height_img;$height;g" README.md
+}
 
-if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-        help
-        exit 0
-fi
+function add { 
+    if [[ -f "$2" ]]; then
+            cp "$2" "$directory"
+    else
+            printf "You can only add files to the list"
+            exit 1
+    fi
+}
 
-read -p "What is your project name? " repo
-read -p "What is your github name/organization? " org_name
-read -p "What is your name/id? " usr_name
-read -p "What is your email? " usr_email
-read -p "What is the title? " title
-read -p "Give us a short description? " desc
-read -p "What is your documentation url? " doc
-read -p "What is your license? " license
-read -p "What is your image url? " image_url
-read -p "What is your image width in px? " width
-read -p "What is your image height in px? " height
+function handler() {
+    case "$1" in
+        "-h"|"--help")
+            help
+            exit 0
+        ;;
+        "-a"|"--add")
+            add
+            exit 0
+        ;;
+        "-l"|"--list")
+            /usr/bin/ls "$directory"
+            exit 0
+        ;;
+        "-t"|"--theme")
+            if [[ -f "$directory""$2" ]]; then
+                    theme="$2"
+            else
+                    printf "Theme's can only be files inside %s use $name -l for a list" "$directory"
+                    exit 1
+            fi
+        ;;
+        "-c"|"--config")
+            if [[ -f "$2" ]]; then
+                source "$2"
+            else
+                    printf "Invalid config"
+                    exit 2
+            fi    
+        ;;
+    esac
+}
 
-directory="/var/cache/readme/"
-
+handler "$1" "$2"
 
 if [[ -f README.md ]]; then
  mv README.md README_old.md
 fi
 
+if [[ "$1" != "-c" && "$1" != "--config" ]]; then
+    generate
+fi
 
-sed "s;repo;$repo;g" "$directory"demo > README.md
-sed -i "s;org_name;$org_name;g" README.md
-sed -i "s;usr_name;$usr_name;g" README.md
-sed -i "s;usr_email;$usr_email;g" README.md
-sed -i "s;title;$title;g" README.md
-sed -i "s;desc_var;$desc;g" README.md
-sed -i "s;doc_var;$doc;g" README.md
-sed -i "s;license_var;$license;g" README.md
-sed -i "s;image_url;$image_url;g" README.md
-sed -i "s;width_img;$width;g" README.md
-sed -i "s;height_img;$height;g" README.md
+execute
