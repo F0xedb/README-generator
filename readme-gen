@@ -2,6 +2,7 @@
 
 name=$(basename "$0")
 directory="/var/cache/readme/"
+userdir="$HOME/.cache/readme/"
 theme="demo"
 
 function help {
@@ -31,8 +32,13 @@ function generate () {
     read -p "What is your image height in px? " height
 }
 
-function execute {
-    sed "s;repo;$repo;g" "$directory""$theme" > README.md
+function execute { 
+    if [[ -f "$directory""$theme" ]]; then 
+        sed "s;repo;$repo;g" "$directory""$theme" > README.md
+    else
+        sed "s;repo;$repo;g" "$userdir""$theme" > README.md
+    fi
+
     sed -i "s;org_name;$org_name;g" README.md
     sed -i "s;usr_name;$usr_name;g" README.md
     sed -i "s;usr_email;$usr_email;g" README.md
@@ -46,8 +52,12 @@ function execute {
 }
 
 function add { 
-    if [[ -f "$2" ]]; then
-            cp "$2" "$directory"
+    if [[ ! -d "$userdir" ]]; then
+            mkdir -p "$userdir"
+    fi
+
+    if [[ -f "$1" ]]; then
+            cp "$1" "$userdir"
     else
             printf "You can only add files to the list"
             exit 1
@@ -61,18 +71,19 @@ function handler() {
             exit 0
         ;;
         "-a"|"--add")
-            add
+            add "$2"
             exit 0
         ;;
         "-l"|"--list")
-            /usr/bin/ls "$directory"
+            /usr/bin/ls "$directory" 
+            /usr/bin/ls "$userdir"
             exit 0
         ;;
         "-t"|"--theme")
-            if [[ -f "$directory""$2" ]]; then
+            if [[ -f "$directory""$2" || -f "$userdir""$2" ]]; then
                     theme="$2"
             else
-                    printf "Theme's can only be files inside %s use $name -l for a list" "$directory"
+                    printf "Theme's can only be files inside %s or %s use $name -l for a list" "$directory" "$userdir"
                     exit 1
             fi
         ;;
