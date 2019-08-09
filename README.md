@@ -1,4 +1,5 @@
 
+[![Build Status](https://jenkins.pbfp.xyz/buildStatus/icon?job=README-gen&style=flat-square)](https://jenkins.pbfp.xyz/job/README-gen/)
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
