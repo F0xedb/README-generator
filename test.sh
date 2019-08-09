@@ -60,7 +60,7 @@ EOF
 
 function test-commands {
         themes=$(sh ../readme-gen -l) 
-        if [[ "$themes" == "$(/usr/bin/ls /var/cache/readme && /usr/bin/ls $HOME/.cache/readme)" ]]; then
+        if [[ "$themes" == "$(ls /var/cache/readme && ls $HOME/.cache/readme)" ]]; then
                 printf "${GREEN}PASS${NC}: all themes are correctly listed\n" 
         else
                 printf "${RED}${RED}ERROR${NC}${NC}: the theme files don't match\n"
