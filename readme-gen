@@ -75,8 +75,8 @@ function handler() {
             exit 0
         ;;
         "-l"|"--list")
-            /usr/bin/ls "$directory" 
-            /usr/bin/ls "$userdir"
+            ls "$directory" 
+            ls "$userdir"
             exit 0
         ;;
         "-t"|"--theme")
