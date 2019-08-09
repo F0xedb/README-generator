@@ -2,6 +2,12 @@
 
 # A small test script to verify if everything still works
 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+
+
 function generate-files {
         cat <<EOF > test-theme
 repo
@@ -55,9 +61,9 @@ EOF
 function test-commands {
         themes=$(sh ../readme-gen -l) 
         if [[ "$themes" == "$(/usr/bin/ls /var/cache/readme && /usr/bin/ls $HOME/.cache/readme)" ]]; then
-                echo "PASS: all themes are correctly listed" 
+                printf "${GREEN}PASS${NC}: all themes are correctly listed\n" 
         else
-                echo "ERROR: the theme files don't match"
+                printf "${RED}${RED}ERROR${NC}${NC}: the theme files don't match\n"
                 exit 1
         fi
         generate-files
@@ -65,12 +71,12 @@ function test-commands {
         sh ../readme-gen -a test-theme 
 
         if [[ "$(sh ../readme-gen -l)" == *test-theme* ]]; then
-                echo "PASS: theme added"
+                printf "${GREEN}PASS${NC}: theme added\n"
                 rm $HOME/.cache/readme/test-theme
         else
-                echo "ERROR: The requested theme isn't added"
+                printf "${RED}ERROR${NC}: The requested theme isn't added\n"
                 echo $(sh ../readme-gen -l)
-                echo "Expected test-them"
+                printf "Expected test-them\n"
                 exit 1
         fi
 
@@ -86,13 +92,13 @@ function test-output {
         sh readme-gen -c ../md.conf
         readme=$(cat README.md)
         if [[ "$readme" == "$(cat result)" ]]; then
-                echo "PASS: generated readme is correct"
+                printf "${GREEN}PASS${NC}: generated readme is correct\n"
         else
-                echo "ERROR: generated readme is wrong"
-                echo "GENERATED RESULT"
-                echo "$readme"
-                echo "EXPECTED README"
-                echo "$(cat result)"
+                printf "${RED}ERROR${NC}: generated readme is wrong\n"
+                printf "GENERATED RESULT\n"
+                printf "$readme\n"
+                printf "EXPECTED README\n"
+                printf "$(cat result)\n"
                 exit 1
         fi
 
@@ -105,16 +111,16 @@ function test-readme {
         sh ../readme-gen -a test-theme
         sh ../readme-gen -c ../md.conf
         if [[ -f "README.md" ]]; then
-                echo "PASS: README created"
+                printf "${GREEN}PASS${NC}: README created\n"
         else
-                echo "ERROR: README failed"
+                printf "${RED}ERROR${NC}: README failed\n"
                 exit 1
         fi
         sh ../readme-gen -c ../md.conf
         if [[ -f "README_old.md" ]]; then
-               echo "PASS: Saved README "
+               printf "${GREEN}PASS${NC}: Saved README \n"
         else
-               echo "ERROR: README didn't backup"
+               printf "${RED}ERROR${NC}: README didn't backup\n"
                exit 1
         fi 
         rm $HOME/.cache/readme/test-theme
@@ -130,15 +136,15 @@ cp ../readme-gen .
 
 case "$1" in 
     "-c")
-            echo "Testing commands"
+            printf "Testing commands\n"
             test-commands
     ;;
     "-o")
-        echo "Testing output"
+        printf "Testing output\n"
         test-output
     ;;
     "-r")
-        echo "Testing readme"
+        printf "Testing readme\n"
         test-readme
     ;;
 esac
