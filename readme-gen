@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Simple bash script to generate README's
+# Build and maintained by Tom Meyers
+# it uses "variables" in template readme's
+# to populate data and generate a good looking and consistent file
+
+
 name=$(basename "$0")
 directory="/var/cache/readme/"
 userdir="$HOME/.cache/readme/"
