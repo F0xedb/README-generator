@@ -150,7 +150,7 @@ All variables are used in this simple example
    <img src="image_url" alt="Logo" width="width_img" height="height_img">
 </a>
 
-# title
+# title_var
 desc_var
 
 ## extra
