@@ -2,7 +2,7 @@
 
 # Simple bash script to generate README's
 # Build and maintained by Tom Meyers
-# it uses "variables" in template readme's
+# it uses "variables" in template README's
 # to populate data and generate a good looking and consistent file
 
 
