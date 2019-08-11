@@ -172,7 +172,7 @@ readme-gen --theme <template> # the readme will be generated using the <template
 ```
 
 
-_For more examples, please refer to the [Documentation](https://www.pbfp.xyz)_
+_For more examples, please refer to the [Documentation](https://github.com/F0xedb/README-generator/wiki)_
 
 
 
