@@ -22,6 +22,7 @@ function help {
     printf "\n\n"
     printf "EXTRA INFO\n"
     printf "\t Sample config can be found here: https://www.github.com/F0xedb/README-generator\n"
+    printf "\t Documentation: https://www.github.com/F0xedb/README-generator/wiki\n"
 }
 
 function generate () {
