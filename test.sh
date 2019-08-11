@@ -16,7 +16,7 @@ repo
 org_name
 usr_name
 usr_email
-title
+title_var
 desc_var
 doc_var
 license_var
