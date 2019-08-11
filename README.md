@@ -1,5 +1,5 @@
 
-[![Build Status](https://jenkins.pbfp.xyz/buildStatus/icon?job=README-gen&style=flat-square)](https://jenkins.pbfp.xyz/job/README-gen/)
+[![Build Status][build-shield]][build-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -215,6 +215,8 @@ Project Link: [https://github.com/F0xedb/README-generator](https://github.com/F0
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[build-shield]: https://jenkins.pbfp.xyz/buildStatus/icon?job=README-gen&style=flat-square
+[build-url]: https://jenkins.pbfp.xyz/job/README-gen/
 [contributors-shield]: https://img.shields.io/github/contributors/F0xedb/README-generator.svg?style=flat-square
 [contributors-url]: https://github.com/F0xedb/README-generator/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/F0xedb/README-generator.svg?style=flat-square
