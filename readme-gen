@@ -48,7 +48,7 @@ function execute {
     sed -i "s;org_name;$org_name;g" README.md
     sed -i "s;usr_name;$usr_name;g" README.md
     sed -i "s;usr_email;$usr_email;g" README.md
-    sed -i "s;title;$title;g" README.md
+    sed -i "s;title_var;$title;g" README.md
     sed -i "s;desc_var;$desc;g" README.md
     sed -i "s;doc_var;$doc;g" README.md
     sed -i "s;license_var;$license;g" README.md
