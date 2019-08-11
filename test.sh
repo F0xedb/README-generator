@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # A small test script to verify if everything still works
+# The tests should be abstracted more
+# Build by Tom Meyers
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
