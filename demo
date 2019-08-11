@@ -14,7 +14,7 @@
     <img src="image_url" alt="Logo" width="width_img" height="height_img">
   </a>
 
-  <h3 align="center">title</h3>
+  <h3 align="center">title_var</h3>
 
   <p align="center">
     desc_var
