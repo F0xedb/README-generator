@@ -132,6 +132,7 @@ function test-readme {
 if [[ -d "test" ]]; then
         rm -rf test
 fi
+
 mkdir test
 cd test
 cp ../readme-gen .
