@@ -26,17 +26,17 @@ function help {
 }
 
 function generate () {
-    read -p "What is your project name? " repo
-    read -p "What is your github name/organization? " org_name
-    read -p "What is your name/id? " usr_name
-    read -p "What is your email? " usr_email
-    read -p "What is the title? " title
-    read -p "Give us a short description? " desc
-    read -p "What is your documentation url? " doc
-    read -p "What is your license? " license
-    read -p "What is your image url? " image_url
-    read -p "What is your image width in px? " width
-    read -p "What is your image height in px? " height
+    read -r -p "What is your project name? " repo
+    read -r -p "What is your github name/organization? " org_name
+    read -r -p "What is your name/id? " usr_name
+    read -r -p "What is your email? " usr_email
+    read -r -p "What is the title? " title
+    read -r -p "Give us a short description? " desc
+    read -r -p "What is your documentation url? " doc
+    read -r -p "What is your license? " license
+    read -r -p "What is your image url? " image_url
+    read -r -p "What is your image width in px? " width
+    read -r -p "What is your image height in px? " height
 }
 
 function execute { 
