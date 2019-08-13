@@ -1,0 +1,99 @@
+# testing main readme functionality
+
+executable="../readme-gen"
+cache="/var/cache/readme"
+cache2="$HOME/.cache/readme"
+
+function Test_output {
+    "$executable" -a test-theme
+    "$executable" -c config.conf
+    AssertExists "README.md"
+    AssertEquals "$(cat README.md)" "$(cat result)"
+
+}
+
+# Checking if a custom theme is added
+function Test_Commands {
+    AssertEquals "$($executable -l)" "$(ls $cache && ls $cache2)"
+    "$executable" -a test-theme
+    AssertContains "$($executable -l)" "test-theme"
+}
+
+# Checking if readme's are build correctly
+function Test_Readme {
+    "$executable" -a test-theme
+    "$executable" -c config.conf
+    AssertExists "README.md"
+    "$executable" -c config.conf
+    AssertExists "README_old.md"
+}
+
+function destroyTest {
+    if [[ -f "README.md" ]]; then
+        rm README.md
+    fi
+
+    if [[ -f "README_old.md" ]]; then
+        rm README_old.md
+    fi
+
+    if [[ -f "$cache2/test-theme" ]]; then
+        rm "$cache2/test-theme"
+    fi
+}
+
+function destroy {
+    rm test-theme result config.conf
+}
+
+function setup {
+        cat <<EOF > test-theme
+repo
+org_name
+usr_name
+usr_email
+title_var
+desc_var
+doc_var
+license_var
+image_url
+width_img
+height_img
+EOF
+
+        cat <<EOF > result
+tos-live
+F0xedb
+F0xedb
+tom@pbfp.team
+a title
+A small operating system based on arch
+https://tos.pbfp.xyz/blog
+GPL
+https://tos.pbfp.xyz/images/logo.svg
+150
+200
+EOF
+
+        cat <<EOF > config.conf
+#!/bin/bash
+theme="test-theme"
+
+repo="tos-live" # this will autofill to https://www.github.com/F0xedb/tos-live inside the readme template
+org_name="F0xedb"
+usr_name="F0xedb"
+usr_email="tom@pbfp.team"
+
+title="a title"
+desc="A small operating system based on arch"
+
+doc="https://tos.pbfp.xyz/blog"
+
+license="GPL"
+
+image_url="https://tos.pbfp.xyz/images/logo.svg"
+width="150" 
+height="200"
+            
+EOF
+}
