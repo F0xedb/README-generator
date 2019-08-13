@@ -1,10 +1,10 @@
-
 [![Build Status][build-shield]][build-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![GPL License][license-shield]][license-url]
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FF0xedb%2FREADME-generator.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FF0xedb%2FREADME-generator?ref=badge_shield)
 
 
 
@@ -204,6 +204,9 @@ Distributed under the GPL License. See `LICENSE` for more information.
 
 
 <!-- CONTACT -->
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FF0xedb%2FREADME-generator.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FF0xedb%2FREADME-generator?ref=badge_large)
+
 ## Contact
 
 Tom Meyers - tom@pbfp.xyz
