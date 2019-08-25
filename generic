@@ -1,0 +1,89 @@
+# title_var
+> desc_var
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![license_var License][license-shield]][license-url]
+
+
+One to two paragraph statement about your product and what it does.
+
+![](image_url)
+
+## Installation
+
+Describe your installation process here.
+eg
+
+```bash
+# Install on arch
+pacman -Syu title_var
+
+# Install on debian based systems
+apt-get install title_var
+
+# Or build the software manually
+make && sudo make install
+```
+
+
+## Usage example
+
+A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+
+_For more examples and usage, please refer to the [Documentation](doc_var)._
+
+## Development setup
+
+Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+
+```sh
+make install
+npm test
+```
+
+## Release History
+
+* 0.2.1
+    * CHANGE: Update docs (module code remains unchanged)
+* 0.2.0
+    * CHANGE: Remove `setDefaultXYZ()`
+    * ADD: Add `newFeature`
+* 0.1.1
+    * FIX: Crash when calling `baz()` (Thanks @ContributorName!)
+* 0.1.0
+    * Pre-alpha release
+    * CHANGE: Rename `foo()` to `bar()`
+* 0.0.1
+    * Initial start
+
+## Meta
+
+usr_name – usr_email
+
+Distributed under the license_var license. See ``LICENSE`` for more information.
+
+[https://github.com/usr_name/repo](https://github.com/usr_name/repo)
+
+## Contributing
+
+1. Fork it (<https://github.com/usr_name/repo/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+<!-- Markdown link & img dfn's -->
+[contributors-shield]: https://img.shields.io/github/contributors/org_name/repo.svg?style=flat-square
+[contributors-url]: https://github.com/org_name/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/org_name/repo.svg?style=flat-square
+[forks-url]: https://github.com/org_name/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/org_name/repo.svg?style=flat-square
+[stars-url]: https://github.com/org_name/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/org_name/repo.svg?style=flat-square
+[issues-url]: https://github.com/org_name/repo/issues
+[license-shield]: https://img.shields.io/github/license/org_name/repo.svg?style=flat-square
+[license-url]: https://github.com/org_name/repo/blob/master/LICENSE.txt
+[product-screenshot]: image_url
