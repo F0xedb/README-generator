@@ -5,7 +5,6 @@
 # it uses "variables" in template README's
 # to populate data and generate a good looking and consistent file
 
-
 name=$(basename "$0")
 directory="/var/cache/readme/"
 userdir="$HOME/.cache/readme/"
@@ -14,114 +13,112 @@ userdir="$HOME/.cache/readme/"
 theme="visual"
 
 # print out help information
-function help {
-    printf "%s OPTIONS:\n" "$name"
-    printf "\t %s -h|--help \t\t Print help information\n" "$name"
-    printf "\t %s \t\t\t Answer questions interactivaly to generate readme\n" "$name"
-    printf "\t %s -l|--list\t\t Return a list of all possible readme templates\n" "$name"
-    printf "\t %s -t|--theme\t\t Use the theme present in said list\n" "$name"
-    printf "\t %s -a|--add\t\t Add a homemade readme template \n" "$name"
-    printf "\t %s -c|--config\t\t Instead of generating a readme interactivaly use a config to generate the readme from. \n" "$name"
-    printf "\n\n"
-    printf "EXTRA INFO\n"
-    printf "\t Sample config can be found here: https://www.github.com/F0xedb/README-generator\n"
-    printf "\t Documentation: https://www.github.com/F0xedb/README-generator/wiki\n"
+function help() {
+	printf "%s OPTIONS:\n" "$name"
+	printf "\t %s -h|--help \t\t Print help information\n" "$name"
+	printf "\t %s \t\t\t Answer questions interactivaly to generate readme\n" "$name"
+	printf "\t %s -l|--list\t\t Return a list of all possible readme templates\n" "$name"
+	printf "\t %s -t|--theme\t\t Use the theme present in said list\n" "$name"
+	printf "\t %s -a|--add\t\t Add a homemade readme template \n" "$name"
+	printf "\t %s -c|--config\t\t Instead of generating a readme interactivaly use a config to generate the readme from. \n" "$name"
+	printf "\n\n"
+	printf "EXTRA INFO\n"
+	printf "\t Sample config can be found here: https://www.github.com/F0xedb/README-generator\n"
+	printf "\t Documentation: https://www.github.com/F0xedb/README-generator/wiki\n"
 }
-
 
 # interactivaly get the project data
-function generate () {
-    read -r -p "What is your project name? " repo
-    read -r -p "What is your github name/organization? " org_name
-    read -r -p "What is your name/id? " usr_name
-    read -r -p "What is your email? " usr_email
-    read -r -p "What is the title? " title
-    read -r -p "Give us a short description? " desc
-    read -r -p "What is your documentation url? " doc
-    read -r -p "What is your license? " license
-    read -r -p "What is your image url? " image_url
-    read -r -p "What is your image width in px? " width
-    read -r -p "What is your image height in px? " height
+function generate() {
+	read -r -p "What is your project name? " repo
+	read -r -p "What is your github name/organization? " org_name
+	read -r -p "What is your name/id? " usr_name
+	read -r -p "What is your email? " usr_email
+	read -r -p "What is the title? " title
+	read -r -p "Give us a short description? " desc
+	read -r -p "What is your documentation url? " doc
+	read -r -p "What is your license? " license
+	read -r -p "What is your image url? " image_url
+	read -r -p "What is your image width in px? " width
+	read -r -p "What is your image height in px? " height
 }
 
-
 # generate the readme
-function execute { 
-    if [[ -f "$directory""$theme" ]]; then 
-        sed "s;repo;$repo;g" "$directory""$theme" > README.md
-    else
-        sed "s;repo;$repo;g" "$userdir""$theme" > README.md
-    fi
+function execute() {
+	if [[ -f "$directory""$theme" ]]; then
+		sed "s;repo;$repo;g" "$directory""$theme" >README.md
+	else
+		sed "s;repo;$repo;g" "$userdir""$theme" >README.md
+	fi
 
-    sed -i "s;org_name;$org_name;g" README.md
-    sed -i "s;usr_name;$usr_name;g" README.md
-    sed -i "s;usr_email;$usr_email;g" README.md
-    sed -i "s;title_var;$title;g" README.md
-    sed -i "s;desc_var;$desc;g" README.md
-    sed -i "s;doc_var;$doc;g" README.md
-    sed -i "s;license_var;$license;g" README.md
-    sed -i "s;image_url;$image_url;g" README.md
-    sed -i "s;width_img;$width;g" README.md
-    sed -i "s;height_img;$height;g" README.md
+	sed -i "s;org_name;$org_name;g" README.md
+	sed -i "s;usr_name;$usr_name;g" README.md
+	sed -i "s;usr_email;$usr_email;g" README.md
+	sed -i "s;title_var;$title;g" README.md
+	sed -i "s;desc_var;$desc;g" README.md
+	sed -i "s;doc_var;$doc;g" README.md
+	sed -i "s;license_var;$license;g" README.md
+	sed -i "s;image_url;$image_url;g" README.md
+	sed -i "s;width_img;$width;g" README.md
+	sed -i "s;height_img;$height;g" README.md
 }
 
 # add a template to the template directory
-function add { 
-    if [[ ! -d "$userdir" ]]; then
-            mkdir -p "$userdir"
-    fi
+function add() {
+	if [[ ! -d "$userdir" ]]; then
+		mkdir -p "$userdir"
+	fi
 
-    if [[ -f "$1" ]]; then
-            cp "$1" "$userdir"
-    else
-            printf "You can only add files to the list"
-            exit 1
-    fi
+	if [[ -f "$1" ]]; then
+		cp "$1" "$userdir"
+	else
+		printf "You can only add files to the list"
+		exit 1
+	fi
 }
 
 # handle user input
 function handler() {
-    case "$1" in
-        "-h"|"--help")
-            help
-            exit 0
-        ;;
-        "-a"|"--add")
-            add "$2"
-            exit 0
-        ;;
-        "-l"|"--list")
-            ls "$directory" 
-            ls "$userdir"
-            exit 0
-        ;;
-        "-t"|"--theme")
-            if [[ -f "$directory""$2" || -f "$userdir""$2" ]]; then
-                    theme="$2"
-            else
-                    printf "Theme's can only be files inside %s or %s use $name -l for a list" "$directory" "$userdir"
-                    exit 1
-            fi
-        ;;
-        "-c"|"--config")
-            if [[ -f "$2" ]]; then
-                source "$2"
-            else
-                    printf "Invalid config"
-                    exit 2
-            fi    
-        ;;
-    esac
+	case "$1" in
+	"-h" | "--help")
+		help
+		exit 0
+		;;
+	"-a" | "--add")
+		add "$2"
+		exit 0
+		;;
+	"-l" | "--list")
+		ls "$directory"
+		ls "$userdir"
+		exit 0
+		;;
+	"-t" | "--theme")
+		if [[ -f "$directory""$2" || -f "$userdir""$2" ]]; then
+			theme="$2"
+		else
+			printf "Theme's can only be files inside %s or %s use $name -l for a list" "$directory" "$userdir"
+			exit 1
+		fi
+		;;
+	"-c" | "--config")
+		if [[ -f "$2" ]]; then
+			source "$2"
+		else
+			printf "Invalid config"
+			exit 2
+		fi
+		;;
+	esac
 }
 
 handler "$1" "$2"
 
 if [[ -f README.md ]]; then
- mv README.md README_old.md
+	mv README.md README_old.md
 fi
 
 if [[ "$1" != "-c" && "$1" != "--config" ]]; then
-    generate
+	generate
 fi
 
 execute
