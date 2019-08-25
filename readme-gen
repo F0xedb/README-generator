@@ -9,8 +9,11 @@
 name=$(basename "$0")
 directory="/var/cache/readme/"
 userdir="$HOME/.cache/readme/"
-theme="demo"
 
+# Default template
+theme="visual"
+
+# print out help information
 function help {
     printf "%s OPTIONS:\n" "$name"
     printf "\t %s -h|--help \t\t Print help information\n" "$name"
@@ -25,6 +28,8 @@ function help {
     printf "\t Documentation: https://www.github.com/F0xedb/README-generator/wiki\n"
 }
 
+
+# interactivaly get the project data
 function generate () {
     read -r -p "What is your project name? " repo
     read -r -p "What is your github name/organization? " org_name
@@ -39,6 +44,8 @@ function generate () {
     read -r -p "What is your image height in px? " height
 }
 
+
+# generate the readme
 function execute { 
     if [[ -f "$directory""$theme" ]]; then 
         sed "s;repo;$repo;g" "$directory""$theme" > README.md
@@ -58,6 +65,7 @@ function execute {
     sed -i "s;height_img;$height;g" README.md
 }
 
+# add a template to the template directory
 function add { 
     if [[ ! -d "$userdir" ]]; then
             mkdir -p "$userdir"
@@ -71,6 +79,7 @@ function add {
     fi
 }
 
+# handle user input
 function handler() {
     case "$1" in
         "-h"|"--help")
