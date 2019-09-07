@@ -69,7 +69,7 @@ pacman -Syu repo
  
 1. Clone the repo
 ```sh
-git clone https:://github.com/org_name/repo.git
+git clone https://github.com/org_name/repo.git
 ```
 2. Install packages
 ```sh

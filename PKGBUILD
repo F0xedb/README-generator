@@ -1,7 +1,7 @@
 # Maintainer: Tom Meyers tom@odex.be
 pkgname=readme-generator-git
-pkgver=r56.22070b8
-pkgrel=2
+pkgver=r62.2092668
+pkgrel=1
 pkgdesc="A basic tool to generate modern readme's"
 arch=(any)
 url="https://github.com/F0xedb/README-generator"
