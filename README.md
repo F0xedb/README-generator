@@ -53,6 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+This readme was generated using the project
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -68,7 +69,7 @@ All you need is bash with gnu utilities
  
 1. Clone the README-generator
 ```sh
-git clone https:://github.com/F0xedb/README-generator.git
+git clone https://github.com/F0xedb/README-generator.git
 ```
 2. Install packages
 ```sh
@@ -78,7 +79,7 @@ mkdir -p .cache/readme
 cp demo .cache/readme/demo
 ```
 
-Alternativly arch users can do the following
+Alternatively arch users can do the following
 
 ```bash
 yay -Syu readme-gen
@@ -98,7 +99,7 @@ It will generate the readme file in the current dir.
 
 ### config
 
-Alternativly you can use a config file and based on that generate a readme.
+Alternatively you can use a config file and based on that generate a readme.
 
 ```bash
 readme-gen -c config
@@ -117,7 +118,7 @@ theme="demo"
 repo="README-generator" # this will autofill to https://www.github.com/F0xedb/README-generator inside the readme template
 org_name="F0xedb"
 usr_name="$org_name" # You can reference other variables like this
-usr_email="tom@pbfp.team"
+usr_email="tom@odex.be"
 
 title="README generator"
 desc="A simple readme generator"
@@ -209,7 +210,7 @@ Distributed under the GPL License. See `LICENSE` for more information.
 
 ## Contact
 
-Tom Meyers - tom@pbfp.xyz
+Tom Meyers - tom@odex.be
 
 Project Link: [https://github.com/F0xedb/README-generator](https://github.com/F0xedb/README-generator)
 
