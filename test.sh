@@ -28,7 +28,7 @@ EOF
 tos-live
 F0xedb
 F0xedb
-tom@pbfp.team
+tom@odex.be
 tos live
 A small operating system based on arch
 https://tos.pbfp.xyz/blog
@@ -44,7 +44,7 @@ theme="test-theme"
 repo="tos-live" # this will autofill to https://www.github.com/F0xedb/tos-live inside the readme template
 org_name="F0xedb"
 usr_name="F0xedb"
-usr_email="tom@pbfp.team"
+usr_email="tom@odex.be"
 
 title="a title"
 desc="A small operating system based on arch"
