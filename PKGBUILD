@@ -26,6 +26,6 @@ build() {
 package() {
         cd "$srcdir/$_reponame"
         install -Dm755 readme-gen "$pkgdir"/usr/bin/readme-gen
-        install -Dm644 visual "$pkgdir"/var/cache/readme/demo
-        install -Dm644 generic "$pkgdir"/var/cache/readme/demo
+        install -Dm644 visual "$pkgdir"/var/cache/readme/visual
+        install -Dm644 generic "$pkgdir"/var/cache/readme/generic
 }
