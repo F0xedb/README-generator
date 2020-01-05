@@ -110,8 +110,12 @@ function handler() {
 		exit 0
 		;;
 	"-l" | "--list")
-		ls "$directory"
-		ls "$userdir"
+		if [[ -d "$directory" ]]; then
+			ls "$directory"
+		fi
+		if [[ -d "$userdir" ]]; then
+			ls "$userdir"
+		fi
 		exit 0
 		;;
 	"-t" | "--theme")
